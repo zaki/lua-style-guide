@@ -239,6 +239,7 @@
 * Align keys when broken over multiple lines
 * Use comma as separator
 * Prefer to use comma after the last item
+* Prefer to use plain keys in dictionary constructors
 
     ```Lua
     -- bad
@@ -250,6 +251,18 @@
       key2 = val2,
       key3 = val3,
       key4 = val4,
+    }
+
+    -- ok
+    table = {
+      ["key1"] = val1,
+      ["key2"] = val2
+    }
+
+    -- better
+    table = {
+      key1 = val1,
+      key2 = val2
     }
     ```
 
